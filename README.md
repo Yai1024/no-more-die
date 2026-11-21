@@ -28,9 +28,12 @@ Minecraft **26.3** 的 Fabric **客户端**模组：当你自己的不死图腾�
 | 项目 | 版本 |
 | --- | --- |
 | Minecraft | 26.3 |
-| Fabric Loader | ≥ 0.20.1 |
-| Java | ≥ 25 |
+| Fabric Loader | 任意能启动 26.3 的版本（不声明最低版本，0.19.x 起可用） |
+| Java | 随 26.3 的要求（25+） |
 | Fabric API | 不需要 |
+
+`fabric.mod.json` 只校验 Minecraft 版本，不再声明 `fabricloader` / `java` 依赖；
+代码也没有调用任何 Fabric Loader API，只使用原版 Minecraft 类 + Mixin。
 
 ## 构建
 
@@ -38,15 +41,15 @@ Minecraft **26.3** 的 Fabric **客户端**模组：当你自己的不死图腾�
 ./gradlew build
 ```
 
-产物：`build/libs/nomoredie-1.0.0.jar`
+产物：`build/libs/nomoredie-1.0.1.jar`
 
 > `gradle.properties` 末尾预留了 `127.0.0.1:7897` 代理配置（默认注释）。
 > 如果 Gradle 拉取依赖超时，取消这四行 `systemProp.*` 的注释即可。
 
 ## 安装
 
-1. 安装 Fabric Loader（0.20.1+）并选择 Minecraft 26.3；
-2. 把 `nomoredie-1.0.0.jar` 放进 `.minecraft/mods/`；
+1. 安装任意可启动 Minecraft 26.3 的 Fabric Loader（0.19.x 起）并选择 26.3；
+2. 把 `nomoredie-1.0.1.jar` 放进 `.minecraft/mods/`；
 3. 启动游戏。模组是纯客户端的，服务器端无需安装。
 
 ## 注意
