@@ -1,0 +1,23 @@
+{
+	"schemaVersion": 1,
+	"id": "nomoredie",
+	"version": "${version}",
+	"name": "No More Die",
+	"description": "Immediately leaves the server the moment your own Totem of Undying pops, using the same disconnect path as quitting to the title screen.",
+	"authors": [
+		"Yai1024"
+	],
+	"license": "MIT",
+	"environment": "client",
+	"mixins": [
+		{
+			"config": "nomoredie.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~26.3",
+		"java": ">=25"
+	}
+}
